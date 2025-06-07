@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Us | MediComforts</title>
+  <link rel="stylesheet" href="stylesc.css">
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+  <!-- Structured Data for Organization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MediComforts",
+      "url": "https://www.medicomforts.com",
+      "logo": "https://www.medicomforts.com/images/logo.png"
+    }
+  </script>
+</head>
+<body>
+  <!-- Fixed Navigation Bar -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="images/logo.png" alt="MediComforts Logo" class="logo-img">
+      </a>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle Navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="scrollable-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        
+        <!-- Products Dropdown Menu -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Products <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="gynecology.html">Gynecology</a>
+            <a href="ophthalmology.html">Ophthalmology</a>
+            <a href="orthopaedic.html">Orthopaedic</a>
+            <a href="ent.html">ENT</a>
+            <a href="neurosurgery.html">Neuro Surgery</a>
+            <a href="cardiology.html">Cardiology</a>
+            <a href="generalsurgery.html">General Surgery</a>
+            <a href="urology.html">Urology</a>
+            <a href="covid19.html">Covid-19</a>
+            <a href="generalconsumables.html">General Consumables</a>
+          </div>
+        </li>
+
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Contact Section -->
+  <section class="contact-section">
+    <h1 class="section-title">Contact Us</h1>
+    <div class="contact-container">
+      <!-- Address -->
+      <div class="contact-box">
+        <i class="fas fa-map-marker-alt contact-icon"></i>
+        <h2>Our Address</h2>
+        <p>21, Brindavana Enclave, DLF City Main Road, Off Bannerghatta Road, Nyanappanahalli, Bengaluru - 560076, Karnataka, India.</p>
+      </div>
+
+      <!-- Phone -->
+      <div class="contact-box">
+        <i class="fas fa-phone contact-icon"></i>
+        <h2>Call Us</h2>
+        <p>+91 94820 36848</p>
+      </div>
+
+      <!-- Email -->
+      <div class="contact-box">
+        <i class="fas fa-envelope contact-icon"></i>
+        <h2>Email Us</h2>
+        <p>rkromi.medico@gmail.com</p>
+      </div>
+    </div>
+
+    <!-- Google Map -->
+    <div class="map-container">
+      <h2>Find Us on the Map</h2>
+      <a href="https://maps.app.goo.gl/8GwR3ai5RsjFiGMX8" 
+         target="_blank" class="map-link">
+        <i class="fas fa-map-marker-alt"></i> Open in Google Maps
+      </a>
+    </div>
+  </section>
+
+  <!-- Enquiry Form Section -->
+  <section class="enquiry-form-section">
+    <div class="enquiry-form-container">
+      <h2>Send Us an Enquiry</h2>
+      <p class="form-subtitle">Feel free to reach out with your enquiries or feedback. We’re here to help!</p>
+      <form action="send_enquiry.php" method="POST" class="enquiry-form">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" placeholder="Your Name" required>
+        </div>
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" placeholder="Your Email" required>
+        </div>
+        <div class="form-group">
+          <label for="phone">Phone Number</label>
+          <input type="tel" id="phone" name="phone" placeholder="Your Phone Number" required>
+        </div>
+        <div class="form-group">
+          <label for="category">Category</label>
+          <select id="category" name="category">
+            <option value="">Select a Category</option>
+            <option value="Gynecology">Gynecology</option>
+            <option value="Ophthalmology">Ophthalmology</option>
+            <option value="Orthopaedic">Orthopaedic</option>
+            <option value="ENT">ENT</option>
+            <option value="Neuro Surgery">Neuro Surgery</option>
+            <option value="Cardiology">Cardiology</option>
+            <option value="General Surgery">General Surgery</option>
+            <option value="Urology">Urology</option>
+            <option value="Covid-19">Covid-19</option>
+            <option value="General Consumables">General Consumables</option>
+            <option value="None">None</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="product">Product</label>
+          <select id="product" name="product">
+            <option value="">Select a Product</option>
+            <!-- Products will be populated dynamically based on the selected category -->
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Message</label>
+          <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+        </div>
+        <button type="submit" class="btn-submit">Send Message</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- JavaScript for Dynamic Product List -->
+  <script>
+   document.getElementById('category').addEventListener('change', function() {
+  var products = {
+    "Gynecology": ["EMBRYO TRANSFER DRAPE KIT ID: ETDK-001", "CAESAREAN KIT ID: CSK-002", "IVF DRAPE KIT ID: IVF-003", "NORMAL DELIVERY KIT ID: NDK-004", "LSCS KIT ID: LSCS-005"],
+    "Ophthalmology": ["EYE DRAPE MEDIUM ID: EDM-101", "EYE DRAPE LARGE ID: EDL-102", "OPHTHALMIC DRAPE KIT ID: ODK-103"],
+    "Orthopaedic": ["TKR KIT ID: TKR-201", "ORTHO PACK ID: OP-202", "BILATERAL LIMB DRAPE ID: BLD-203", "SHOULDER ARTHROSCOPY KIT ID: SAK-204", "EXTREMITY DRAPE ID: ED-205", "THR DRAPE KIT ID: THR-206", "KNEE ARTHROSCOPY KIT ID: KAK-207"],
+    "ENT": ["ENT DRAPE KIT ID: EDK-301", "CATARACT DRAPE KIT ID: CDK-302"],
+    "Neuro Surgery": ["LAMINO SPINE DRAPE ID: LSD-301", "NEURO DRAPE KIT ID: NDK-302", "CRANIOTOMY DRAPE KIT ID: CDK-303"],
+    "Cardiology": ["CABG DRAPE KIT ID: CABG-401", "CATHLAB DRAPE KIT (ANGIO PACK) ID: CDK-402"],
+    "General Surgery": ["MINOR DRAPE KIT ID: MDK-501", "HIV DRAPE (SINGLE DOCTOR) ID: HIVD-502", "UNIVERSAL INFECTION CONTROL KIT ID: UIC-503", "LAPAROSCOPY PACK ID: LP-504", "MAJOR DRAPE KIT ID: MDK-505"],
+    "Urology": ["UROLOGY DRAPE KIT ID: UDK-601", "TURP DRAPE KIT ID: TDP-602", "URSL DRAPE KIT ID: URS-603", "URSL DRAPE KIT ID: URS-604"],
+    "Covid-19": ["PPE KIT FOR OPD ID: PPE-OPD-701", "PPE KIT FOR COVID-19 ID: PPE-COVID-702"],
+    "None": ["None"] // Add "None" option for the "None" category
+  };
+
+  var productDropdown = document.getElementById('product');
+  productDropdown.innerHTML = '<option value="">Select a Product</option>';
+
+  if (this.value && products[this.value]) {
+    // Add the "None" option at the beginning of the products list
+    if (this.value !== "None") {
+      var noneOption = new Option("None", "None");
+      productDropdown.add(noneOption);
+    }
+
+    // Add the rest of the products
+    products[this.value].forEach(function(product) {
+      var option = new Option(product, product);
+      productDropdown.add(option);
+    });
+  }
+});
+  </script>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <p><i class="fa fa-envelope"></i> rkromi.medico@gmail.com</p>
+        <p><i class="fa fa-phone"></i> 9482036848 | 9483410790</p>
+      </div>
+
+      <div class="address">
+        <p><i class="fa fa-map-marker-alt"></i> 21, Brindavana Enclave, DLF City Main Road, Off Bannerghatta Road, Nyanappanahalli, Bengaluru - 560076, Karnataka, India.</p>
+      </div>
+
+      <div class="social-icons">
+        <h3 class="follow-us">Follow Us</h3>
+        <a href="https://www.instagram.com/omi_medicomforts?igsh=Z2Vnamhkd3ptaXZn" target="_blank" class="social-icon instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://m.facebook.com/p/Omi_Medicomforts-100063579803769/?hr=1&wtsid=rdr_0bofjBGN4qJmGvhLB" target="_blank" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+
+      <p>© <span id="year"></span> MediComforts. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating WhatsApp Button -->
+  <div class="whatsapp-btn">
+    <a href="https://wa.me/919482036848?text=Hi,%20I%20am%20interested%20in%20learning%20more%20about%20MediComforts%20products%20and%20services.%20Please%20let%20me%20know%20how%20I%20can%20proceed%20with%20my%20enquiry." 
+       target="_blank" class="whatsapp-link">
+      <i class="fab fa-whatsapp"></i>
+      <span>Contact Us</span>
+    </a>
+  </div>
+
+  <script>
+    // Dynamically update the year in the footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // JavaScript to toggle the mobile menu
+    const menuToggle = document.querySelector('.menu-toggle');
+    const scrollableNav = document.querySelector('.scrollable-nav');
+
+    menuToggle.addEventListener('click', () => {
+      scrollableNav.classList.toggle('open');
+    });
+
+    // Dropdown Menu for Products (Hover and Click)
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    // Show dropdown when mouse enters
+    dropbtn.addEventListener('mouseenter', function() {
+      dropdownContent.classList.add('show');
+    });
+
+    // Keep dropdown visible on mouse hover over dropdown-content
+    dropdownContent.addEventListener('mouseenter', function() {
+      dropdownContent.classList.add('show');
+    });
+
+    // Hide dropdown when mouse leaves
+    dropdownContent.addEventListener('mouseleave', function() {
+      dropdownContent.classList.remove('show');
+    });
+
+    // Highlight the active subcategory
+    document.querySelectorAll('.dropdown-content a').forEach((link) => {
+      if (link.getAttribute('href') === window.location.pathname) {
+        link.classList.add('active');
+      }
+    });
+
+    // Toggle Dropdown on Mobile
+    document.querySelector('.dropbtn').addEventListener('click', function(event) {
+      if (window.innerWidth <= 768) { // Only for mobile view
+        event.preventDefault();
+        const dropdownContent = this.nextElementSibling;
+        dropdownContent.classList.toggle('show');
+      }
+    });
+
+    // Close Dropdown when clicking outside
+    window.addEventListener('click', function(event) {
+      if (!event.target.matches('.dropbtn') && !event.target.matches('.dropdown-content')) {
+        const dropdowns = document.querySelectorAll('.dropdown-content');
+        dropdowns.forEach(function(dropdown) {
+          dropdown.classList.remove('show');
+        });
+      }
+    });
+
+    // Add active class to the current page link
+    const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+    document.querySelectorAll('.nav-links a').forEach(link => {
+      if (link.getAttribute('href') === currentPage) {
+        link.classList.add('active');
+      }
+    });
+  </script>
+</body>
+</html>

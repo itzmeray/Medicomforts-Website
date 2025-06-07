@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Cardiology - MediComforts</title>
+
+  <!-- External CSS -->
+  <link rel="stylesheet" href="stylesCardiology.css">
+
+  <!-- Font Awesome CDN for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/x-icon" href="images/favicon_io/favicon.ico">
+  
+  <!-- Structured Data for Organization -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "MediComforts",
+      "url": "https://www.medicomforts.com",
+      "logo": "https://www.medicomforts.com/images/logo.png"
+    }
+  </script>
+</head>
+
+<body>
+  <!-- Navigation Bar -->
+  <header>
+    <div class="logo-container">
+      <a href="index.html">
+        <img src="images/logo.png" alt="MediComforts Logo" class="logo-img">
+      </a>
+    </div>
+    <button class="menu-toggle" aria-label="Toggle Navigation">
+      <i class="fas fa-bars"></i>
+    </button>
+    <nav class="scrollable-nav">
+      <ul class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About Us</a></li>
+        
+        <!-- Products Dropdown Menu -->
+        <li class="dropdown">
+          <a href="javascript:void(0)" class="dropbtn">Products <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="gynecology.html">Gynecology</a>
+            <a href="ophthalmology.html">Ophthalmology</a>
+            <a href="orthopaedic.html">Orthopaedic</a>
+            <a href="ent.html">ENT</a>
+            <a href="neurosurgery.html">Neuro Surgery</a>
+            <a href="cardiology.html">Cardiology</a>
+            <a href="generalsurgery.html">General Surgery</a>
+            <a href="urology.html">Urology</a>
+            <a href="covid19.html">Covid-19</a>
+            <a href="generalconsumables.html">General Consumables</a>
+          </div>
+        </li>
+
+        <li><a href="contact.html">Contact Us</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- Products Page Content for Cardiology -->
+  <main>
+    <section class="category-header">
+      <h1>Products - Cardiology</h1>
+      <p>Discover our premium products for Cardiology care.</p>
+    </section>
+
+    <section class="products">
+      <div class="product-container">
+        <!-- Product 1: CABG Drape Kit -->
+        <div class="product-card">
+          <div class="image-slider">
+            <img src="images/cabg-drape-kit.jpg" alt="CABG Drape Kit" class="product-image">
+            <img src="images/cabg-drape-kit-2.jpg" alt="CABG Drape Kit" class="product-image second-image">
+          </div>
+          <h3 class="product-title">CABG DRAPE KIT</h3>
+          <p class="product-id">ID: CABG-401</p>
+          <p class="product-description">Sterile drape kit designed for Coronary Artery Bypass Graft (CABG) surgeries, ensuring maximum coverage and protection.</p>
+        </div>
+
+        <!-- Product 2: Cathlab Drape Kit (Angio Pack) -->
+        <div class="product-card">
+          <div class="image-slider">
+            <img src="images/cathlab-drape-kit.jpg" alt="Cathlab Drape Kit (Angio Pack)" class="product-image">
+            <img src="images/cathlab-drape-kit-2.jpg" alt="Cathlab Drape Kit (Angio Pack)" class="product-image second-image">
+          </div>
+          <h3 class="product-title">CATHLAB DRAPE KIT (ANGIO PACK)</h3>
+          <p class="product-id">ID: CDK-402</p>
+          <p class="product-description">Comprehensive sterile drape kit for Cathlab procedures, including angiography, ensuring optimal safety and hygiene.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer>
+    <div class="footer-content">
+      <div class="contact-info">
+        <p><i class="fa fa-envelope"></i> rkromi.medico@gmail.com</p>
+        <p><i class="fa fa-phone"></i> 9482036848 | 9483410790</p>
+      </div>
+
+      <div class="address">
+        <p><i class="fa fa-map-marker-alt"></i> 21, Brindavana Enclave, DLF City Main Road, Off Bannerghatta Road, Nyanappanahalli, Bengaluru - 560076, Karnataka, India.</p>
+      </div>
+
+      <div class="social-icons">
+        <h3 class="follow-us">Follow Us</h3>
+        <a href="https://www.instagram.com/omi_medicomforts?igsh=Z2Vnamhkd3ptaXZn" target="_blank" class="social-icon instagram">
+          <i class="fab fa-instagram"></i>
+        </a>
+        <a href="https://m.facebook.com/p/Omi_Medicomforts-100063579803769/?hr=1&wtsid=rdr_0bofjBGN4qJmGvhLB" target="_blank" class="social-icon">
+          <i class="fab fa-facebook-f"></i>
+        </a>
+      </div>
+
+      <p>© <span id="year"></span> MediComforts. All Rights Reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+    // Dynamically update the year in the footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Dropdown Menu for Products (Hover and Click)
+    const dropbtn = document.querySelector('.dropbtn');
+    const dropdownContent = document.querySelector('.dropdown-content');
+
+    // Show dropdown when mouse enters
+    dropbtn.addEventListener('mouseenter', function() {
+      dropdownContent.classList.add('show');
+    });
+
+    // Keep dropdown visible on mouse hover over dropdown-content
+    dropdownContent.addEventListener('mouseenter', function() {
+      dropdownContent.classList.add('show');
+    });
+
+    // Hide dropdown when mouse leaves
+    dropdownContent.addEventListener('mouseleave', function() {
+      dropdownContent.classList.remove('show');
+    });
+
+    // Highlight the active subcategory
+    document.querySelectorAll('.dropdown-content a').forEach((link) => {
+      if (link.getAttribute('href') === window.location.pathname) {
+        link.classList.add('active');
+      }
+    });
+
+    // Toggle Menu for Mobile View
+    document.querySelector('.menu-toggle').addEventListener('click', function() {
+      document.querySelector('.scrollable-nav').classList.toggle('open');
+    });
+
+    // Toggle Dropdown on Mobile
+    document.querySelector('.dropbtn').addEventListener('click', function(event) {
+      if (window.innerWidth <= 768) { // Only for mobile view
+        event.preventDefault();
+        const dropdownContent = this.nextElementSibling;
+        dropdownContent.classList.toggle('show');
+      }
+    });
+
+    // Close Dropdown when clicking outside
+    window.addEventListener('click', function(event) {
+      if (!event.target.matches('.dropbtn') && !event.target.matches('.dropdown-content')) {
+        const dropdowns = document.querySelectorAll('.dropdown-content');
+        dropdowns.forEach(function(dropdown) {
+          dropdown.classList.remove('show');
+        });
+      }
+    });
+  </script>
+</body>
+
+</html>
